@@ -12,7 +12,7 @@ pipeline {
         stage('Scan') {
             steps {
                 withSonarQubeEnv(installationName: 'sonar-6') { 
-                sh 'mvn install clean sonar:sonar'
+                sh 'mvn clean install sonar:sonar'
                 }
             }
         }
