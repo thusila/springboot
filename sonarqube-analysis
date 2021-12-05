@@ -9,11 +9,7 @@ pipeline {
                 sh 'mvn --version'
             }
         }
-        stage('SCM') {
-            steps {
-                git url: 'https://github.com/thusila/springboot.git'
-            }
-        }
+        
         stage('build && SonarQube analysis') {
             steps {
                 withSonarQubeEnv('sonar-6') {
