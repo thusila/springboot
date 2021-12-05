@@ -11,7 +11,7 @@ pipeline {
         }
         stage('SCM') {
             steps {
-                git url: 'https://github.com/thusila/devops.git'
+                git url: 'https://github.com/thusila/springboot.git'
             }
         }
         stage('build && SonarQube analysis') {
