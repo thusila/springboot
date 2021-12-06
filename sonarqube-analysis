@@ -24,7 +24,7 @@ pipeline {
                     //waitForQualityGate abortPipeline: true
                     script{
                         def qg = waitForQualityGate()
-                        if(qg.status == 'ok' ){
+                        if(qg.status == 'OK' ){
                             echo "Qulity Gate Successfull and Ready for the Production"
                         }
                     }    
