@@ -21,7 +21,11 @@ pipeline {
                 timeout(time: 1, unit: 'HOURS') {
                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
                     // true = set pipeline to UNSTABLE, false = don't
-                    waitForQualityGate abortPipeline: true
+                    //waitForQualityGate abortPipeline: true
+                    def qg = waitForQualityGate()
+                    if(qg.status == 'ok' ){
+                        echo "Qulity Gate Successfull and Ready for the Production"
+                    }
                 }
             }
         }
